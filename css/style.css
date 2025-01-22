@@ -34,6 +34,7 @@
     margin-bottom: 2px;
 }
 
+
 .input-value-generator, .input-value-validator{
     background: none;
     border: none;
@@ -45,6 +46,24 @@
     resize: none;
     width: 100%;
     overflow: hidden;
+}
+
+.icon-show-password{
+  position: absolute;
+  top: 9px;
+  right: 5px;
+  height: 40px;
+  font-size: 2rem;
+  width: 40px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  color: #959494;
+}
+
+.icon-show-password:hover{
+  color: #818181;
+    cursor: pointer;
 }
 
 .result-container .btn{
@@ -190,7 +209,7 @@
     background-color: #d1ecf1;
     border-color: #bee5eb;
     position: fixed !important;
-    max-width: 200px;
+    max-width: 250px;
     right: 16px;
     top: 16px;
 }

@@ -92,7 +92,7 @@ const handleValidatePassword = (input) => {
 
 	if (resValidate.isSucces) {
 		messageError.classList.remove("message-error");
-		messageError.innerText = resValidate.message;
+		messageError.innerText = "";
 	} else {
 		messageError.classList.add("message-error");
 		messageError.innerText = resValidate.message;
@@ -199,12 +199,22 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (resValidate.isSucces) {
 			messageError.classList.remove("message-error");
 			messageError.innerText = "";
-			alert("La contraseña es válida");
-			e.target.submit();
+			handleAlert("La contraseña es válida");
+			// e.target.submit();
 		} else {
 			messageError.classList.add("message-error");
 			messageError.innerText = resValidate.message;
 		}
+	});
+
+	const iconShowPassword = document.getElementById("iconShowPassword");
+
+	iconShowPassword.addEventListener("click", () => {
+		const inputPassword = document.getElementById("password");
+		const isVisible = inputPassword.type === "password";
+		inputPassword.type = isVisible ? "text" : "password";
+		iconShowPassword.querySelector("span").classList.toggle("bi-eye-slash");
+		iconShowPassword.querySelector("span").classList.toggle("bi-eye");
 	});
 });
 
